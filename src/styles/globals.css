@@ -1,12 +1,7 @@
 @import "tailwindcss";
 
-/* tokens / small utilities */
-:root {
-  --app-max-width: 72rem;
-}
-
+/* reset e height total */
 html, body, #root {
   height: 100%;
+  margin: 0;
 }
-
-img { display: block; }
