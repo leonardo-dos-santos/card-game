@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
-import Scoreboard from "./components/Scoreboard/Scoreboard";
+import Scoreboard from "./components/ScoreBoard/ScoreBoard";
 import CardGrid from "./components/CardGrid/CardGrid";
 import { useBestScore } from "./hooks/useBestScore";
 import { fetchGifs } from "./lib/giphy";
