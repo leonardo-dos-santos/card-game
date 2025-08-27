@@ -22,4 +22,5 @@ Jogo de memória com GIFs animados, feito em **React + Vite + Tailwind CSS**.
 - Score e Best Score.
 - Reset rápido do jogo.
 
-
+## Deploy
+O projeto está disponível online em: [https://card-game-for-fun.netlify.app/]
