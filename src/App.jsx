@@ -31,42 +31,40 @@ export default function App() {
   }, []);
 
   // ---- Clique na carta
-const handleCardClick = (id) => {
-  if (isProcessing) return;
+  const handleCardClick = (id) => {
+    if (isProcessing) return;
 
-  const clicked = cards.find(c => c.id === id);
-  if (!clicked) return;
+    const clicked = cards.find(c => c.id === id);
+    if (!clicked) return;
 
-  // Avalia score imediatamente
-  if (prevCard) {
-    if (prevCard.title !== clicked.title) {
-      setScore(prev => {
-        const next = prev + 1;
-        updateBestScore(next);
-        return next;
-      });
-    } else {
-      setScore(0);
+    // Avalia score imediatamente
+    if (prevCard) {
+      if (prevCard.title !== clicked.title) {
+        setScore(prev => {
+          const next = prev + 1;
+          updateBestScore(next);
+          return next;
+        });
+      } else {
+        setScore(0);
+      }
     }
-  }
 
-  // Atualiza referência da carta clicada para comparar no próximo clique
-  setPrevCard(clicked);
+    // Atualiza referência da carta clicada para comparar no próximo clique
+    setPrevCard(clicked);
 
-  // Flip temporário da carta clicada
-  setTempFlipped([id]);
-  setIsProcessing(true);
+    // Flip temporário da carta clicada
+    setTempFlipped([id]);
+    setIsProcessing(true);
 
-  // Flip + shuffle de todas as cartas após delay
-  setCards(prev => prev.map(c => ({ ...c, isFlipped: false })));
-  setTimeout(() => {
-    setCards(prev => shuffleArray(prev.map(c => ({ ...c, isFlipped: true }))));
-    setTempFlipped([]);
-    setIsProcessing(false);
-  }, 1000);
-};
-
-
+    // Flip + shuffle de todas as cartas após delay
+    setCards(prev => prev.map(c => ({ ...c, isFlipped: false })));
+    setTimeout(() => {
+      setCards(prev => shuffleArray(prev.map(c => ({ ...c, isFlipped: true }))));
+      setTempFlipped([]);
+      setIsProcessing(false);
+    }, 1000);
+  };
 
   // ---- Reset geral
   const handleReset = () => {
@@ -77,7 +75,7 @@ const handleCardClick = (id) => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700 text-slate-50">
       <Header />
       <div className="mb-6">
         <Scoreboard score={score} bestScore={bestScore} onReset={handleReset} />
