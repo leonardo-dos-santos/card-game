@@ -8,6 +8,12 @@ html, body, #root {
   font-family: 'Orbitron', sans-serif;
   overflow: hidden; /* Remove barras de rolagem */
   box-sizing: border-box;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%23d4a85a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 8h3m10-5v5m-2-5v5M9 8h9l3 3H9l-2-1-2-1-1-1h5zm9 3v8l-2 2H9l-1-2v-8'/%3E%3C/svg%3E") 0 0, auto;
+}
+
+/* Cursor para elementos clicáveis */
+button, a, .card-flip, [role="button"] {
+  cursor: pointer;
 }
 
 body {
